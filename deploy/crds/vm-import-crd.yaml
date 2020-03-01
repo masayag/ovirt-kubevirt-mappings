@@ -1,0 +1,22 @@
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: virtualmachineminport.v2v.kubevirt.io
+spec:
+  group: v2v.kubevirt.io
+  names:
+    kind: VirtualMachineImport
+    listKind: VirtualMachineImportList
+    plural: virtualmachine-imports
+    shortNames:
+    - vm-import
+    singular: virtualmachine-import
+    categories:
+    - all
+  scope: Namespaced
+  version: v1alpha3 # version should be aligned with kubevirt due to its dependency on kubevirt api
+  versions:
+  - name: v1alpha3
+    served: true
+    storage: true

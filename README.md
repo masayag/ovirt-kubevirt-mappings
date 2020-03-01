@@ -8,8 +8,7 @@ proper resource creation on kubevirt side.
 The user will have to provide this resource priorly to initiating the VM
 import process, in which the VM will be referred to this map.
 
-The patch contains an example of a mapping in
-`ovirt-mapping-example.yaml`:
+The patch contains an example of a mapping in `/deploy/ovirt-mapping-example.yaml`:
 
 ```
 apiVersion: v1
