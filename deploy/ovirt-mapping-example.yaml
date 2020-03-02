@@ -12,7 +12,6 @@ data:
       - source: ovirtmgmt
         target: pod
         type: pod
-        kind: ConfigMap
     storageMapping:
       - source: ovirt_storage_domain_1 # maps ovirt storage domains to storage class
         target: storage_class_1
