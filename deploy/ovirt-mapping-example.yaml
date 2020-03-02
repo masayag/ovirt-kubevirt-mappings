@@ -18,5 +18,5 @@ data:
     affinityMapping: # affinity mappings will be limited at first for 'pinned-to-host', since affinity/anti-affinity requires more than a single vm import
       - source: ovirt_node_1
         target: k8s_node_1
-        policy: pinning
+        policy: nodeAffinity
 
