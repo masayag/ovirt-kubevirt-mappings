@@ -12,9 +12,9 @@ spec:
         name: myvm # in order to uniquely identify vm on ovirt with need to provide (vm_name,cluster) or use (vm-id)
         cluster: mycluster
         id: 80554327-0569-496b-bdeb-fcbbf52b827b
-    mapping:
-      - name: config-map-of-ovirt-resources-to-kubevirt # a mapping of ovirt resource (network, storage, affinity)
-        namespace: othernamespace # optional, if not provided, use same namespace as this cr
+  mapping:
+    - name: config-map-of-ovirt-resources-to-kubevirt # a mapping of ovirt resource (network, storage, affinity)
+      namespace: othernamespace # optional, if not provided, use same namespace as this cr
 status:
   targetVirtualMachineName: myvm
   message: VM is being imported
