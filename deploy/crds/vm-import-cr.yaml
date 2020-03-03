@@ -7,22 +7,26 @@ metadta:
 spec:
   source:
     ovirt:  # represents ovirt-engine to import from the virtual machine
-      ovirtSecretName: my-secret-with-ovirt-credentials  # A secret holding the access credentials to ovirt, see example ovirt-mapping-example.yaml
+      secretName: my-secret-with-ovirt-credentials  # A secret holding the access credentials to ovirt, see example ovirt-mapping-example.yaml
       vm:
         name: myvm # in order to uniquely identify vm on ovirt with need to provide (vm_name,cluster) or use (vm-id)
         cluster: mycluster
         id: 80554327-0569-496b-bdeb-fcbbf52b827b
-  target:
     mapping:
       - name: config-map-of-ovirt-resources-to-kubevirt # a mapping of ovirt resource (network, storage, affinity)
         namespace: othernamespace # optional, if not provided, use same namespace as this cr
 status:
   targetVirtualMachineName: myvm
+  message: VM is being imported
   conditions:
   - lastProbeTime: null
     lastTransitionTime: "2020-02-20T12:43:10Z"
     status: "True"
     type: Ready # indicates if the vm import process is completed or not
+    message: VM was successfully imported.
   state: Running
   phase: CopyingDisk
   progress: 30% # progress as reported by the CDI for the data-volume, estimated for all of the disks
+  dataVolumes:
+    - name: dv-1
+    - name: dv-2
