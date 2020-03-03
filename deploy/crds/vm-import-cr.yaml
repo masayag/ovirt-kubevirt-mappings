@@ -6,8 +6,8 @@ metadta:
   namespace: mynamespace # determines the destination namespace of the vm
 spec:
   source:
+    secretName: my-secret-with-ovirt-credentials  # A secret holding the access credentials to ovirt, see example ovirt-mapping-example.yaml
     ovirt:  # represents ovirt-engine to import from the virtual machine
-      secretName: my-secret-with-ovirt-credentials  # A secret holding the access credentials to ovirt, see example ovirt-mapping-example.yaml
       vm:
         name: myvm # in order to uniquely identify vm on ovirt with need to provide (vm_name,cluster) or use (vm-id)
         cluster: mycluster
